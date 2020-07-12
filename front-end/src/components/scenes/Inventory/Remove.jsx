@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import kebab from "./atoms/Icon-kebab-default.svg";
 import axios from "axios";
 
-
-
 export default class RemoveButton extends Component {
 
   state = {
