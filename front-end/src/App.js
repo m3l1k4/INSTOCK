@@ -5,7 +5,7 @@ import Layout from './utils/Layout';
 import Warehouses from './components/scenes/Warehouses/Warehouses';
 import Inventory from './components/scenes/Inventory/Inventory';
 import AddNewInventory from './components/scenes/Inventory/AddNewInventory/';
-import SpecificWarehouseInventory from './components/scenes/Inventory/SpecificWarehouseInventory';
+import SpecificWarehouseInventory from './components/scenes/Warehouses/SpecificWarehouseInventory';
 
 const  App = () => {
   return (

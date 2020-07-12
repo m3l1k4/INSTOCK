@@ -56,8 +56,8 @@ export default class Inventory extends Component {
               updateItems={this.updateItems}
               inventory={this.state.inventory}
             />
-            {/* add NewInventoryItem / modal here */}
             </div>
+            {/* AddNewInventory modal here */}
           </>
         );  
     } else {

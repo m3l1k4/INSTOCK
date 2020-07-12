@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Remove from "./Remove";
+import ArrowLink from "./ArrowLink";
 
-export default class Items extends React.Component  {
+export default class WarehousesByRow extends React.Component  {
   render() {
     const table =
-    this.props.inventory[0].map(obj => {
+    this.props.warehouses[0].map(obj => {
       return (
         <section key={obj.id} className="table">
           <div className="table-row">
@@ -26,12 +26,8 @@ export default class Items extends React.Component  {
               <span className="table-row__content--subHeader">Quantity</span>
               <span className="table-row__content--value">{obj.quantity}</span>
             </div>
-            <div className="table-row__content">
-              <span className="table-row__content--subHeader">Status</span>
-              <span className="table-row__content--value">{obj.status}</span>
-            </div>
           </div>
-          <Remove itemID={obj.id}/>
+          <ArrowLink warehouseID={obj.id}/>
         </section>
       );
     });
