@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import WarehousesByRow from "./WarehousesByRow";
+import Items from "../Inventory/Items";
 import axios from "axios";
 import BackArrow from "./atoms/Icon-back-arrow.svg";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ export default class SpecificWarehouseInventory extends Component {
     inventory: []
   };
   componentDidMount() {
-    // w4 in get request needs to be by id 
+    // specific warehouse id to replace W4
     axios.get(`http://localhost:8080/warehouses/W4`)
     .then(res => {
       this.setState({
@@ -20,7 +20,7 @@ export default class SpecificWarehouseInventory extends Component {
       console.log(res.data);
     });
   }
-  updateWarehouses = () => {
+  updateItems = () => {
     setTimeout(() => {
       axios.get(`http://localhost:8080/warehouses/${this.props.match.params.id}`).then(res => {
       this.setState({
@@ -95,11 +95,11 @@ export default class SpecificWarehouseInventory extends Component {
                 <span className="inventory-subHeaders__content">Last Ordered</span>
                 <span className="inventory-subHeaders__content">Location</span>
                 <span className="inventory-subHeaders__content">Quantity</span>
-                <span className="inventory-subHeaders__content">Status</span>
+                <span className="inventory-subHeaders__content status-sub">Status</span>
               </div>
-              <WarehousesByRow
-                updateWarehouses={this.updateWarehouses}
-                warehouses={this.state.inventory}
+              <Items
+                updateItems={this.updateItems}
+                inventory={this.state.inventory}
               />
             </div>
           </>
