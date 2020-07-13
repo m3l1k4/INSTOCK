@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ArrowLink from "./ArrowLink";
+import arrow from "./atoms/Icon-arrow-right.svg";
 
 export default class WarehousesByRow extends React.Component  {
   render() {
@@ -27,7 +27,11 @@ export default class WarehousesByRow extends React.Component  {
               <span className="table-row__content--value">{obj.quantity}</span>
             </div>
           </div>
-          <ArrowLink warehouseID={obj.id}/>
+          <div className="table-row__remove">
+            <div className="table-row__remove--dropdown-handle">
+              <Link to ={`/warehouses/${obj.id}`}><input  className="table-row__remove-button" alt="arrow" type="image" src={arrow} /></Link>
+            </div>
+          </div>
         </section>
       );
     });
