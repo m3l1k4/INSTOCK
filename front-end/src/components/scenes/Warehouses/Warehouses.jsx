@@ -51,7 +51,7 @@ export default class Warehouses extends Component {
               <span className="inventory-subHeaders__content">Warehouse</span>
               <span className="inventory-subHeaders__content">Contact</span>
               <span className="inventory-subHeaders__content">Contact Information</span>
-              <span className="inventory-subHeaders__content categories-sub">Categories</span>
+              <span className="inventory-subHeaders__content">Categories</span>
             </div>
             <WarehousesByRow
               updateWarehouses={this.updateWarehouses}
